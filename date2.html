@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style>
+
+    body{
+      margin:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+
+      background:transparent;
+
+      font-family:Arial,sans-serif;
+      direction:rtl;
+    }
+
+    .widget{
+      padding:15px 25px;
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+
+      border:3px solid #000;
+      border-radius:10px;
+
+      box-shadow:2px 2px 5px rgba(0,0,0,0.2);
+
+      color:#000;
+      background:white;
+    }
+
+    .day{
+      font-size:2.2em;
+      font-weight:bold;
+    }
+
+    .date{
+      margin-top:8px;
+
+      font-size:1.3em;
+
+      font-family:monospace;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="widget">
+
+    <div class="day" id="day"></div>
+
+    <div class="date" id="date"></div>
+
+  </div>
+
+  <script>
+
+    const today = new Date();
+
+    const hebrewDays = [
+      "1 - ראשון",
+      "2 - שני",
+      "3 - שלישי",
+      "4 - רביעי",
+      "5 - חמישי",
+      "6 - שישי",
+      "7 - שבת"
+    ];
+
+    document.getElementById("day").innerHTML =
+      hebrewDays[today.getDay()];
+
+    document.getElementById("date").innerHTML =
+      today.toLocaleDateString("he-IL", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+
+  </script>
+
+</body>
+</html>
