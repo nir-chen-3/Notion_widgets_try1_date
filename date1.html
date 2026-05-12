@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+      font-family: Arial, sans-serif;
+      direction: rtl;
+    }
+
+    .date-widget {
+      text-align: center;
+      color: white;
+    }
+
+    .day {
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .date {
+      font-size: 22px;
+      margin-top: 6px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="date-widget">
+    <div class="day" id="day"></div>
+    <div class="date" id="date"></div>
+  </div>
+
+  <script>
+    const today = new Date();
+
+    const hebrewDays = [
+      "1 - ראשון",
+      "2 - שני",
+      "3 - שלישי",
+      "4 - רביעי",
+      "5 - חמישי",
+      "6 - שישי",
+      "7 - שבת"
+    ];
+
+    document.getElementById("day").textContent =
+      hebrewDays[today.getDay()];
+
+    document.getElementById("date").textContent =
+      today.toLocaleDateString("he-IL", {
+        day: "numeric",
+        month: "long"
+      });
+  </script>
+
+</body>
+</html>
