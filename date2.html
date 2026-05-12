@@ -26,17 +26,12 @@
       flex-direction:column;
       align-items:center;
 
-      border:3px solid #000;
-      border-radius:10px;
-
-      box-shadow:2px 2px 5px rgba(0,0,0,0.2);
-
       color:#000;
-      background:white;
+      background:transparent;
     }
 
     .day{
-      font-size:2.2em;
+      font-size:1.8em;
       font-weight:bold;
     }
 
@@ -66,13 +61,13 @@
     const today = new Date();
 
     const hebrewDays = [
-      "1 - ראשון",
-      "2 - שני",
-      "3 - שלישי",
-      "4 - רביעי",
-      "5 - חמישי",
-      "6 - שישי",
-      "7 - שבת"
+      "ראשון - 1",
+      "שני - 2",
+      "שלישי - 3",
+      "רביעי - 4",
+      "חמישי - 5",
+      "שישי - 6",
+      "שבת - 7"
     ];
 
     document.getElementById("day").innerHTML =
